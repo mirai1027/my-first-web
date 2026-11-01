@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一個網頁</title>
+
+    <style>
+        .my-photo {
+            width: 300px; 
+            border-radius: 10px; 
+            display: block;
+            margin: 15px 0; 
+        }
+        
+        
+        .change-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #15cde6;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+       
+        .change-btn:hover {
+            background-color: #136991;
+        }
+
+        body {
+            
+            background-image: url("./背景.jpg"); 
+           
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            
+            color: #ffffff; 
+        }
+    </style>
+</head>
+<body>
+    <h1>歡迎來到我做的第一個網頁</h1>
+
+    <p>這是我自學程式的第一步！</p>
+
+    <p>點擊下方的按鈕，就可以在不重新整理網頁的情況下，隨機切換圖片！</p>
+
+    <button class="change-btn" onclick="changeImage()">換一張圖！</button>
+    <img id="random-img" class="my-photo" alt="哦不 圖片顯示不出來">
+<script>
+const images = [
+            "./p1.jpg",
+            "./p2.jpg",
+            "./p3.jpg",
+            "./p4.jpg"
+        ];
+
+        function changeImage() {
+            const randomIndex = Math.floor(Math.random() * 4);
+            const chosenImage = images[randomIndex];
+            const imgTag = document.getElementById("random-img");
+            imgTag.src = chosenImage;
+ }
+            changeImage();
+
+</script>
+</body>
+</html>
